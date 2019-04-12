@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Scout del Guaviare</title>
+	<link rel="stylesheet" href="css/estilos.css"><!-- maneja los estilos del menu -->
+	<link rel="stylesheet" href="css/mainResponsive.css"><!-- maneja los estilos del banner -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css"><!-- Biblioteca Bootstrap -->
+	<link rel="stylesheet" href="css/particles/particles.css"><!-- Framework para mostrar particulas interactivas -->
+	<link rel="stylesheet" href="css/formulario.css">
+	<!-- hojas de estilo y js del login -->
+	<link rel="stylesheet" type="text/css" href="css/login/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login/swipebox.css">
+	<script type="text/javascript" src="js/login/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/login/login.js"></script>
+	<script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
+	<!-- aqui acaba el login -->
+	<!-- hoja de estilos del calendario -->
+	<link rel="stylesheet" href="css/calendar/bundle.css">
+	<!-- css plugin slider -->
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+</head>
+<body>
+	<!-- Banner y menú de la página -->
+	<div id="menu"></div>
+	<!-- div para el modificable de la página -->
+	<div id="contenedor">
+		<!-- contiene la información principal de la página y las partículas interactivas -->
+		<div id="main">
+			<div id="particles-js"></div>
+			<!-- sección para pósibles noticias -->
+			<div class="col-lg-10 col-lg-offset-1">
+				<div id="noticias" class="noticias text-center">
+				</div>
+			</div>	
+		</div>
+		<div class="banner-1">
+			<h3>Linea de Tiempo<a href="#" target="_blanck">Saber M&aacute;s</a></h3>
+		</div>
+		<div id="titulo"> 
+			<h2>¿Qu&eacute; hacemos?</h2>
+		</div>
+		<div class="row-fluid">
+			<div class="col-lg-4">
+				<div id="element" class="center-block">
+					<img src="imagenes/logo_scout.png" id="imageHome1">
+					<h4 id="titleHome1" align="center"></h4>
+					<p id="textHome1" align="center"></p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div id="element" class="center-block">
+					<img src="imagenes/logo_scout.png" id="imageHome2">
+					<h4 id="titleHome2" align="center"></h4>
+					<p id="textHome2" align="center"></p>
+				</div>
+			</div>
+			<div class="col-lg-4">
+				<div id="element" class="center-block">
+					<img src="imagenes/logo_scout.png" id="imageHome3">
+					<h4 id="titleHome3" align="center"></h4>
+					<p id="textHome3" align="center"></p>
+				</div>
+			</div>
+		</div>	
+		<!-- parte del iframe (mapa de San Jose del Guavire) -->
+		<!-- <div id="maps"></div> -->
+		<span class="clearfix"></span>
+		<div class="row-fluid" style="margin-top: 5%;">
+			<div class="col-sm-6">
+				<div class="formulario">
+					<h4 class="formu-ti">Formulario de Contacto</h4>
+					<form action="index.php" method="post">
+						<input type="text" name="nombre" placeholder="Nombre" class="caja-1">
+						<input type="email" name="email" placeholder="E-mail" class="caja-1" required>
+						<input type="tel" name="telefono" placeholder="Teléfono" class="caja-1" required>
+						<input type="text" name="asunto" placeholder="Asunto" class="caja-1">
+						<textarea name="mensaje" id="" cols="30" rows="10" placeholder="Comentarios" class="caja-2"></textarea>
+						<button type="submit" class="contratar-a correr">Enviar</button>
+					</form>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div id='calendar-wrap' class='calendar-wrap'></div>
+			</div>
+		</div>
+	</div>	
+	<span class="clearfix"></span>
+	<div id="footer"></div>
+	<!-- script para manejar el calendario -->
+	<script src="js/calendar/calendar.js"></script>
+	<!-- script para añadir la cabecera y el footer de todas las páginas -->
+	<script type="text/javascript" src="js/inicio.js"></script>
+	<!-- generador del efecto del boton que desciende -->
+	<script src="js/scrolly/jquery.scrolly.min.js"></script>
+	<script src="js/scrolly/jquery.poptrox.min.js"></script>
+	<script src="js/scrolly/skel.min.js"></script>
+	<script src="js/scrolly/util.js"></script>
+	<script src="js/scrolly/main.js"></script>
+	<!-- controlador del contenido dinámico -->
+	<script src="js/contenido/contenido.js"></script>
+	<!-- js para controlar slider de noticias -->
+	<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<!-- scripts para el mapa -->
+<!-- 	<script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat: 2.563424, lng: -72.635120};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+  	document.getElementById('maps'), {zoom: 15.7, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfsbVxz5bsAsLJDmr2bReNv210163nz2I&callback=initMap">
+</script> -->
+
+<!-- Scripts para las particulas y su ubicacion -->
+<script type="text/javascript" src="js/particles/particles.js"></script>
+<script type="text/javascript" src="js/particles/app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,192 @@
+@font-face {
+  font-family: 'arrows';
+  src: url('../arrow/arrows.eot');
+  src: url('../arrow/arrows.eot?#iefix') format('embedded-opentype'), url('../arrow/arrows.woff') format('woff'), url('../arrow/arrows.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/*es el contenedor que se usa para escribir un nuevo evento en el calendario  (es donde esta el input y el boton para crear el evento)*/
+#select{
+  position:absolute;
+  width: 150px;
+  left: 50%;  
+  bottom: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, 50%);
+  z-index:29;
+}
+#event_input{
+  width: 70%;
+}
+#t_button{
+  width: 30%;
+
+}
+/* cambiar la forma en la que se remarcan las fechas que tienen actividades */
+.event{
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-left: 90%;
+  width: 5px;
+  height: 100%;
+}
+/*es la clase que crea las marcas debajo de las fechas que tienen eventos*/
+.circle {
+  margin-top: 22%;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+/* cambiar estilo para ver las fechas que tienen en actividades */
+
+.dataContainer{
+  display: none;
+}
+.dataEvent{
+  position: relative;
+  padding: 3px 0px 3px 0px;
+  border: 1px solid;
+}
+.closeData{
+  position: absolute;
+  right: 2px;
+  top: 0;
+}
+
+td:hover .dataContainer{
+  display: block;
+  font:11px 'Roboto';
+  position:absolute;
+  border:1px solid #f7f3eb; 
+  color:#f7f3eb;
+  background: #0B0C10;
+  z-index:9999;
+  min-width:150px; 
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+}
+[class*='icon-']:before {
+  display: inline-block;
+  font-family: 'arrows';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-arrow-right:before {
+  content: '\0042';
+}
+.icon-arrow-left:before {
+  content: '\0041';
+}
+/*controla la forma, posición y color del calendario en general*/
+.calendar {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  user-select: none;
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  background-color: #0B0C10;
+  /*background-color: none;*/
+  color: #1E94A0;
+  border: 3px solid #004E6D;
+  border-radius: 23px;
+  display: inline-table;
+}
+/*controla la parte superior del calendario*/
+.calendar__head {
+  width: 100%;
+  height: 21%;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: default;
+}
+.calendar__head-text {
+  font-size: 22px;
+}
+.calendar__head-days {
+  width: 100%;
+  text-decoration: none;
+}
+.calendar__head-days-item {
+  position: relative;
+}
+.calendar__head-days-item:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: calc(100% - 2px);
+  top: 50%;
+  margin-top: -10px;
+  width: 2px;
+  height: 20px;
+  background-color: #00172D;
+}
+.calendar__head-days-item:last-child:after {
+  display: none;
+}
+.calendar__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2%;
+}
+.calendar__btn {
+  cursor: pointer;
+  font-size: 27px;
+}
+.calendar__body {
+  width: 100%;
+  height: 79%;
+  border-spacing: 4px 3px;
+  padding: 3px 0;
+  text-align: center;
+}
+.calendar-cell {
+  position: relative;
+  overflow: visible;
+  width: 38px;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: box-shadow 0.22s ease-in;
+  padding: 0 0 0 0;
+}
+.calendar-cell:hover {
+  position: relative;
+  overflow: visible;
+  box-shadow: inset 0px 0px 0px 2px #001a33;
+}
+.calendar-cell-selected {
+  background: #00172D;
+}
+.calendar-cell-selected.calendar-cell-today {
+  box-shadow: inset 0px 0px 0px 2px #001a33;
+}
+.calendar-cell-gray {
+  color: #4b5457;
+  cursor: default;
+}
+.calendar-cell-gray:hover {
+  box-shadow: none;
+}
+.calendar-cell-green {
+  color: #1aecc2;
+}
+.calendar-cell-today {
+  background-color: #4b5457;
+}
+.calendar-wrap {
+  width: 30%;
+  height: 70%;
+  margin: 0 30% auto;
+  display: inline-table;
+}

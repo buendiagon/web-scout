@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Biblioteca Scout</title>
+	<link rel="stylesheet" href="css/estilos.css"><!-- maneja los estilos del menu -->
+	<link rel="stylesheet" href="css/mainResponsive.css"><!-- maneja los estilos del banner -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css"><!-- Biblioteca Bootstrap -->
+	<link rel="stylesheet" href="css/particles/particles.css"><!-- Framework para mostrar particulas interactivas -->
+	<link rel="stylesheet" href="css/formulario.css">
+	<!-- hojas de estilo y js del login -->
+	<link rel="stylesheet" type="text/css" href="css/login/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login/swipebox.css">
+	<script type="text/javascript" src="js/login/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/login/login.js"></script>
+	<script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
+	<!-- aqui acaba el login -->
+	<link rel="stylesheet" type="text/css" href="css/biblioteca_buscador.css"> <!-- estilo css del buscador -->
+</head>
+<body>
+	<div id="menu"></div>  <!-- div contenedor de lo que es el menu -->
+
+	<div id="title_search"><LABEL>Biblioteca Super Internacional del guaviare</LABEL></div>
+
+			<!-- 
+			#1 hacer que las imagenes se pasen solas... catalogo
+		
+		-->
+
+		<img src="imagenes/logoscout.png" class="center-block"><!--  imagen del buscador -->
+
+		<h1 class="h1">Buscador</h1>
+		<div class="input-field col s12">	  	
+			<label>Palabra Clave</label> 
+			<select id="valores">
+				<option value="" disabled selected >Elija su opci&oacute;n</option>
+				<option value="1">Autor</option>
+				<option value="2">T&iacute;tulo</option>
+				<option value="3">ETC</option>
+			</select>
+			<button >Todos los libros</button>   				 		
+		</div>
+
+		<div class="flexsearch">
+			<div class="flexsearch--wrapper">
+				<form class="flexsearch--form" action="#" method="post">
+					<div class="flexsearch--input-wrapper">
+						<input class="flexsearch--input" type="search" id="search_buscar" placeholder="Encuentra el libro que te dar&aacute; la sabiduria">
+					</div>
+
+					<!-- ¿Poner un autocompletador de la palabra buscada? ******* -->		
+					<!-- boton de buscar -->
+					<input class="flexsearch--submit" type="button" id="bton" value="&#10140;" onclick="buscar()" />
+
+					<!-- error:== desaparece el boton al buscar con el texto vacio -->	
+					<!-- script para validar el campo del buscador -->
+					<!-- problema con cambiar de pagina y con la imagen de autor.png -->
+					<!-- crear un footer para los htmls -->
+					<script type="text/javascript"> 
+						function buscar() {
+							var boton=document.getElementById('bton');
+							boton.onclick=function() {
+								var buscar=document.getElementById('search_buscar').value;
+								if (buscar.length==0) {
+									alert("No has escrito ningun libro");
+								}									
+								else{
+									// var resultado=document.getElementById('search_buscar').value;
+									// hacer  que lo que este escrito se envie a resultados.html
+									// window.location.replace("resultados.html");
+								}
+							}
+						}
+					</script>	
+				</form>
+			</div>
+		</div>
+
+		<div id="footer"></div> <!-- div contenedor de lo que es el footer -->
+		<script type="text/javascript" src="js/inicio.js"></script>
+		
+		<!-- generador del efecto del boton que desciende -->
+		<script src="js/scrolly/jquery.scrolly.min.js"></script>
+		<script src="js/scrolly/jquery.poptrox.min.js"></script>
+		<script src="js/scrolly/skel.min.js"></script>
+		<script src="js/scrolly/util.js"></script>
+		<script src="js/scrolly/main.js"></script>
+		<!-- controlador del contenido dinámico -->
+		<script src="js/contenido/contenido.js"></script>
+	</body>
+	</html>

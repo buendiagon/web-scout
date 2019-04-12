@@ -1,0 +1,48 @@
+/* maneja el formulario en general */
+.formulario{
+	float: left;
+	width: 85%;
+	margin: auto;
+	color:#999;
+	position: relative;
+	overflow: hidden;
+}
+/* maneja el tamaño de los inputs pequeños del formulario */
+.caja-1{
+	display: inline-grid;
+	width: 250px;
+	height: 40px;
+	margin: 20px 20px;
+	padding: 10px;
+	font-size: 14px;
+}
+/* maneja el tamaño de los inputs grandes del formulario */
+.caja-2{
+	display: block;
+	width: 545px;
+	height: 100px;
+	margin: 20px 20px;
+	padding: 10px;
+	font-size: 14px;
+}
+/* alinea el boton con el resto del formulario */
+.correr{
+	margin: 20px 20px;
+	padding: 10px;
+}
+/* maneja el titulo del formulario */
+.formu-ti{
+	margin: 0px 20px;
+	color: #444;
+}
+.limpia{
+	clear: both;
+}
+footer{
+	clear: both;
+	margin-top: 50px;
+	background: #000;
+	color: #DE6BF5;
+	text-align: center;
+	padding: 30px;
+}
