@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-02-2019 a las 03:56:04
+-- Tiempo de generación: 19-04-2019 a las 00:41:23
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -43,7 +43,6 @@ INSERT INTO `eventos` (`id`, `fecha`, `evento`, `rama`) VALUES
 (28, '2019-02-08', 'juego', 'manada'),
 (29, '2019-02-07', 'aniversario comunidad', 'comunidad'),
 (30, '2019-02-22', 'actividad de servicio', 'grupo'),
-(31, '2019-03-08', 'juego', 'manada'),
 (32, '2019-03-20', 'aniversario comunidad', 'comunidad'),
 (33, '2019-03-22', 'sda', 'grupo'),
 (34, '2019-02-14', 'actividad de servicio', 'tropa');
@@ -66,7 +65,7 @@ ALTER TABLE `eventos`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

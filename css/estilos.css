@@ -82,7 +82,13 @@
 .noticia{
 	margin-bottom: 2%;
 }
-
+.imgNews{
+	display: inline;
+	margin: 2% auto;
+	max-width: 60%;
+	max-height: 40%;
+	background: #ffffff;
+}
 /* controla el tamaño del mapa en la página principal */
 #maps{
 	position: relative;

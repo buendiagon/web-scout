@@ -1,10 +1,9 @@
-function contenido(where,id){
-	var texto=document.getElementById("text"+where+id);
-	var img=document.getElementById("image"+where+id);
-	var titulo=document.getElementById("title"+where+id);
-	if(texto!==null){
+function contenido(where){
+	var texto=document.getElementById("text"+where+"1");
+	let noticias=document.getElementById("noticias");
+	if(texto!==null || noticias!==null){
 		var parametros={
-			"id" : where+id
+			"id" : where
 		};
 		$.ajax({
 			data:  parametros,
@@ -12,39 +11,27 @@ function contenido(where,id){
 			type:  'post',
 			success:  function (response) {
 				var tex=$.parseJSON(response);
-				if(tex.length!==0){
-					if(texto){
-						texto.innerHTML=tex[0][2];
-					}
-					if(titulo){
-						titulo.innerHTML=tex[0][1];
-					}
-					if(img){
-						img.src=tex[0][3];
-					}
-					let noticias=document.getElementById("noticias");
-					if(where=="News"){
-						news(id+1);
-					}else if(where=="TimeLine"){
-						let fecha=document.getElementById("fecha"+where+id);
-						fecha.innerHTML=tex[0][4];
-						timeLine(id+1);
-					}else{
-						contenido(where,id+1);
-
-					}
-				}else{
-					if(where=="News"){
-						texto.parentElement.remove();
-						$('.noticias').slick({
-							slidesToShow: 1,
-							slidesToScroll: 1,
-							autoplay: true,
-							autoplaySpeed: 3000,
-						});
-					}else if(where=="TimeLine"){
-						img.remove();
-						texto.innerHTML="Ultima de este año";
+				for (var i = 0; i < tex.length+1; i++) {
+					if(i!==tex.length){
+						if(where=="News"){
+							news(i+1,tex[i][1],tex[i][2],tex[i][3]);
+						}else if(where=="Home"){
+							let titulo=document.getElementById("title"+where+(i+1));
+							let texto=document.getElementById("text"+where+(i+1));
+							let img=document.getElementById("image"+where+(i+1));
+							titulo.innerHTML=tex[i][1];
+							texto.innerHTML=tex[i][2];
+							img.src=tex[i][3];
+						}
+					}if(i==tex.length){
+						if(where=="News"){
+							$('.noticias').slick({
+								slidesToShow: 1,
+								slidesToScroll: 1,
+								autoplay: true,
+								autoplaySpeed: 3000,
+							});
+						}
 					}
 				}
 			}
@@ -52,55 +39,28 @@ function contenido(where,id){
 	}
 }
 
-function news(id){
+function news(id,titulo,texto,imagen){
 	let noticias=document.getElementById("noticias");
 	if(noticias!==null){
 		let general=document.createElement("div");
 		let noticiaTitle=document.createElement("div");
 		let noticia=document.createElement("div");
+		let img=document.createElement("img");
 		noticiaTitle.setAttribute('id','titleNews'+id);
 		noticia.setAttribute('id','textNews'+id);
 		noticiaTitle.classList.add('noticiaTitle');
+		img.classList.add("imgNews");
 		noticia.classList.add('noticia');
 		general.appendChild(noticiaTitle);
+		general.appendChild(img);
 		general.appendChild(noticia);
 		noticias.appendChild(general);
-		contenido("News",id);
-	}
-}
-function timeLine(id){
-	let timeLine=document.getElementById("TimeLine");
-	if(timeLine!==null){
-		let step=document.createElement("div");
-		let head=document.createElement("div");
-		let body=document.createElement("div");
-		let fecha=document.createElement("div");
-		let fechaNumber=document.createElement("span");
-		let titulo=document.createElement("h2");
-		let texto=document.createElement("p");
-		let img=document.createElement("img");
-		step.classList.add("demo-card","demo-card--step"+id);
-		head.classList.add("head");
-		fecha.classList.add("number-box");
-		body.classList.add("body");
-		img.setAttribute("height","75%");
-		img.setAttribute("alt","Graphic");
-		fechaNumber.setAttribute("id","fechaTimeLine"+id);
-		titulo.setAttribute("id","titleTimeLine"+id);
-		texto.setAttribute("id","textTimeLine"+id);
-		img.setAttribute("id","imageTimeLine"+id);
-		fecha.appendChild(fechaNumber);
-		head.appendChild(fecha);
-		head.appendChild(titulo);
-		body.appendChild(texto);
-		body.appendChild(img);
-		step.appendChild(head);
-		step.appendChild(body);
-		timeLine.appendChild(step);
-		contenido("TimeLine",id);
-	}
-}
+		noticiaTitle.innerHTML=titulo;
+		noticia.innerHTML=texto;
+		img.src=imagen;
 
+	}
+}
 
 
 
@@ -115,8 +75,15 @@ function login(){
 		success:  function (response) {
 			if($.parseJSON(response)==false){
 				alert("el usuario y la contraseña no coinciden");
-			}
-			else if(typeof calendar!="undefined"){
+			}else if($.parseJSON(response)[0][12]=="administrador"){
+				let menu=document.getElementById("config");
+				let config=document.createElement("a");
+				config.setAttribute("id","bd");
+				config.setAttribute("href","php/PHPhelp/index.php");
+				config.setAttribute("target","_blank");
+				config.innerHTML="Bases de Datos";
+				menu.appendChild(config);
+			}if(typeof calendar!="undefined"){
 				calendar.calendarLogin($.parseJSON(response));	
 			}
 		}
@@ -157,6 +124,11 @@ function logout(){
 					</form>`;
 					loginBox.style.display="none";
 				}
+				let menu=document.getElementById("config");
+				let config=document.getElementById("bd");
+				if(menu!==null && config!==null){
+					menu.removeChild(config);
+				}
 			}else{
 				loginButton.innerHTML='<span>Cerrar sesi&oacute;n</span></a>';
 				loginBox.innerHTML="";
@@ -179,8 +151,8 @@ function out(){
 		}
 	});
 }
-news(1);
-timeLine(1);
-contenido("Home",1);
+
+contenido("News");
+contenido("Home");
 login();
 logout();

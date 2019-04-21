@@ -1,7 +1,7 @@
 <?php
 // PHP para controlar las bases de datos del calendario de la página 
 require_once('PHPhelp/php/modelo.php');
-$myClass=new baseDeDatos('bd_fecha');
+$myClass=new baseDeDatos('bd_scout');
 $array=0;
 // consulta para obtener los eventos que haya en un mes determinado
 if(isset($_POST['mes'])){
@@ -30,14 +30,10 @@ if(isset($_POST['deleteEvent'])){
 	$sql="DELETE FROM eventos WHERE fecha='".$_POST['deleteDate']."' AND evento='".$_POST['deleteEvent']."'";
 	$myClass->sentence($sql);
 }
-?>
 
 
-
-<?php 
 // PHP para controlar las bases de datos de los usuarios de la página 
-require_once('PHPhelp/php/modelo.php');
-$myClass=new baseDeDatos('bd_usuarios');
+$myClass=new baseDeDatos('bd_scout');
 $array=0;
 session_start();
 if(isset($_REQUEST['user'])){
@@ -65,22 +61,34 @@ if(isset($_POST['userFlag'])){
 		}
 	}
 }
-?>
 
 
-
-
-
-
-<?php 
 // PHP para controlar el contenido dinámico de la página
-require_once('PHPhelp/php/modelo.php');
-$myClass=new baseDeDatos('bd_contenido');
+$myClass=new baseDeDatos('bd_scout');
 $array=0;
 if(isset($_POST['id'])){
-	$sql="select * from contenido where id='".$_POST['id']."'";
+	$sql="SELECT * FROM `contenido` WHERE tipo='".$_POST['id']."' ORDER by fecha DESC LIMIT 3";
 	$myClass->sentence($sql,$array);
 	echo json_encode($array);
 }
+if(isset($_POST['timeLine'])){
+	$timeLine=$_POST['timeLine'];
+	$sql="SELECT * FROM contenido WHERE tipo='$timeLine' ORDER BY fecha ASC";
+	$myClass->sentence($sql,$array);
+	// str_replace($array," ","");	
+	echo json_encode($array);
+	
+	// $myClass->debug(json_encode($array[0]));
+	// $myClass->debug(json_encode($json));
 
+}
+if(isset($_POST['btn_time'])){
+	$titulo=$_POST['tituloTime'];
+	$texto=$_POST['texto'];
+	$fecha=$_POST['fecha'];
+	$img=0;
+	$sql="INSERT INTO contenido(titulo,texto,imagen,fecha,tipo) VALUES ('$titulo','$texto','$img','$fecha','TimeLine')";
+	$myClass->sentence($sql);
+	header('Location: ../resultados.html');
+}
 ?>
