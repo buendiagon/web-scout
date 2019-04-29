@@ -216,6 +216,8 @@ class baseDeDatos {
         $err = $this->sentence($sql);
         if (!$err) {
             $this->debug("Error al realizar la operacion, por favor revise que los campos son correctos");
+        }else{
+            $this->debug("nice");
         }
         return $err;
     }

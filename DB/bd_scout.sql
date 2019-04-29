@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2019 a las 19:38:15
+-- Tiempo de generación: 28-04-2019 a las 21:10:45
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_scout`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `biblioteca`
+--
+
+CREATE TABLE `biblioteca` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(50) DEFAULT NULL,
+  `descripcion` varchar(100) DEFAULT NULL,
+  `autor` varchar(50) DEFAULT NULL,
+  `rama` varchar(50) DEFAULT NULL,
+  `url` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -79,7 +94,6 @@ INSERT INTO `eventos` (`id`, `fecha`, `evento`, `rama`) VALUES
 (28, '2019-02-08', 'juego', 'manada'),
 (29, '2019-02-07', 'aniversario comunidad', 'comunidad'),
 (30, '2019-02-22', 'actividad de servicio', 'grupo'),
-(32, '2019-03-20', 'aniversario comunidad', 'comunidad'),
 (33, '2019-03-22', 'sda', 'grupo'),
 (34, '2019-02-14', 'actividad de servicio', 'tropa');
 
@@ -123,11 +137,18 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`documento`, `tipo_documento`, `nombres`, `apellidos`, `celular`, `direccion`, `email`, `ocupacion`, `EPS`, `fecha_nacimiento`, `usuario`, `password`, `nivel`, `genero`, `estado_civil`, `religion`, `poblacion`, `estudios`, `estrato`, `discapacidad`, `RH`, `medicamentos`, `dieta`, `etapa_progresion`, `documento_padre`) VALUES
 ('1120582189', 'C.C', 'Daniel Adrian', 'Gonzalez Buendia', '3182053244', 'primero de mayo cll 19 #19-24', 'danieladriangonzalez@hotmail.com', 'estudiante', 'nueva EPS', '1998-04-22', 'buendiagon', '146015abb8c00070efc50503fcfdf568', 'administrador', 0, 'soltero', 'ninguna', 'ninguna', 'bachiller tÃ©cnico', 2, 'ninguna', 'A+', 'ninguno', 'ninguna', 'ninguna', '41655039'),
+('123', 'C.C', 'prueba', 'prueba', '0000000000', 'calle 00', 'prueba@prueba.com', 'prueba', 'nueva EPS', '2000-04-15', 'prueba', 'c893bad68927b457dbed39460e6afd62', 'scout', 1, 'soltero', 'ninguna', 'ninguna', 'tÃ©cnico', 3, 'ninguna', 'AB+', 'ninguno', 'ninguna', 'ninguna', ''),
 ('41655039', 'C.C', 'Maria Eugenia', 'Buendia PeÃ±a', '3115408887', 'primero de mayo cll 19 #19-24', 'buendiadellano@gmail.com', 'pensionada', 'nueva EPS', '1964-09-25', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `biblioteca`
+--
+ALTER TABLE `biblioteca`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `contenido`
@@ -151,6 +172,12 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `biblioteca`
+--
+ALTER TABLE `biblioteca`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `contenido`

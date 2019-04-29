@@ -51,12 +51,17 @@ if(isset($_POST['userFlag'])){
 		echo json_encode("guest");
 	}else{
 		if($_SESSION['nombre']==json_encode(false)){
-			session_destroy();
-			echo json_encode("guest");
+			// session_destroy();
+			$_SESSION['nombre']=json_encode("guest");
+			if($_POST['userFlag']==1){
+				echo json_encode(false);
+			}else if($_POST['userFlag']==2){
+				echo $_SESSION['nombre'];
+			}
 		}else{
 			echo $_SESSION['nombre'];
 		}
-		if($_POST['userFlag']==2){
+		if($_POST['userFlag']==3){
 			session_destroy();
 		}
 	}
@@ -83,12 +88,99 @@ if(isset($_POST['timeLine'])){
 
 }
 if(isset($_POST['btn_time'])){
-	$titulo=$_POST['tituloTime'];
-	$texto=$_POST['texto'];
-	$fecha=$_POST['fecha'];
-	$img=0;
-	$sql="INSERT INTO contenido(titulo,texto,imagen,fecha,tipo) VALUES ('$titulo','$texto','$img','$fecha','TimeLine')";
-	$myClass->sentence($sql);
-	header('Location: ../resultados.html');
+    $uploadOk = 1;
+    $path="null";
+    $return="../time_line.html";
+    echo $_FILES["imagenTime"]["name"];
+	if(isset($_FILES["imagenTime"]["tmp_name"])){
+		$target_dir = "../imagenes/contenido/";
+	    $target_file = $target_dir . basename($_FILES["imagenTime"]["name"]);
+	    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+	    if(isset($_FILES["imagenTime"]["tmp_name"])){
+	        $check = getimagesize($_FILES["imagenTime"]["tmp_name"]);
+	        if($check !== false) {
+	            echo "File is an image - " . $check["mime"] . ".";
+	            $uploadOk = 1;
+	        } else {
+	            echo "File is not an image.";
+	            echo'<script type="text/javascript">
+	            alert("Error este archivo no se puede subir al servidor");
+	            window.location.href="'.$return.'";
+	            </script>';
+	            $uploadOk = 0;
+	        }
+
+	    // Check if file already exists
+	        if (file_exists($target_file)) {
+	            echo "Sorry, file already exists.";
+	            $myClass->debug($target_file);
+	            echo'<script type="text/javascript">
+	            alert("Error el archivo ya existe");
+	            window.location.href="'.$return.'";
+	            </script>';
+	            $uploadOk = 0;
+	        }
+	    // Check file size
+	        if ($_FILES["imagenTime"]["size"] > 500000) {
+	            $maxDim = 800;
+				$file_name = $_FILES['imagenTime']['tmp_name'];
+				list($width, $height, $type, $attr) = getimagesize( $file_name );
+				if ( $width > $maxDim || $height > $maxDim ) {
+				    $target_filename = $file_name;
+				    $ratio = $width/$height;
+				    if( $ratio > 1) {
+				        $new_width = $maxDim;
+				        $new_height = $maxDim/$ratio;
+				    } else {
+				        $new_width = $maxDim*$ratio;
+				        $new_height = $maxDim;
+				    }
+				    $src = imagecreatefromstring( file_get_contents( $file_name ) );
+				    $dst = imagecreatetruecolor( $new_width, $new_height );
+				    imagecopyresampled( $dst, $src, 0, 0, 0, 0, $new_width, $new_height, $width, $height );
+				    imagedestroy( $src );
+				    imagepng( $dst, $target_filename ); // adjust format as needed
+				    imagedestroy( $dst );
+				}
+	        }
+	    // Allow certain file formats
+	        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+	            && $imageFileType != "gif" ) {
+	            echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+	        $myClass->debug("not allowed");
+	        echo'<script type="text/javascript">
+	            alert("Error tipo de archivo no permitido");
+	            window.location.href="'.$return.'";
+	            </script>';
+	        $uploadOk = 0;
+	        }
+	    // Check if $uploadOk is set to 0 by an error
+	        if ($uploadOk == 0) {
+	            echo "Sorry, your file was not uploaded.";
+	            $myClass->debug("no upload");
+	    // if everything is ok, try to upload file
+	        } else {
+	            if (move_uploaded_file($_FILES["imagenTime"]["tmp_name"], $target_file)) {
+	                echo "The file ". basename( $_FILES["imagenTime"]["name"]). " has been uploaded.";
+	                $path="imagenes/contenido/".$_FILES["imagenTime"]["name"];
+	                $myClass->debug("nice");
+	            } else {
+	                echo "Sorry, there was an error uploading your file.";
+	                $myClass->debug("error uploading");
+	                $upload = 0;
+	            }
+	        }
+	    }
+	}else{
+		echo "bad doesn't exists";
+	}
+    if($uploadOk==1){
+		$titulo=$_POST['tituloTime'];
+		$texto=$_POST['texto'];
+		$fecha=$_POST['fecha'];
+		$sql="INSERT INTO contenido(titulo,texto,imagen,fecha,tipo) VALUES ('$titulo','$texto','$path','$fecha','TimeLine')";
+		$myClass->sentence($sql);
+		header('Location: '.$return);	   
+    }
 }
 ?>

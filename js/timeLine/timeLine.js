@@ -76,6 +76,7 @@ function timeLine(){
 					let titulo=document.createElement("h2");
 					let fecha=document.createElement("div");
 					let texto=document.createElement("p");
+					let img=document.createElement("input");
 
 
 					titulo.setAttribute("id","tituloTime");
@@ -101,13 +102,18 @@ function timeLine(){
 						let form=document.createElement("form");
 						form.setAttribute("name","subida-imagenes");
 						form.setAttribute("method","POST");
-						form.setAttribute("enctype","multipart/formdata");
+						form.setAttribute("enctype","multipart/form-data");
 						form.setAttribute("action","php/base.php");
 						let input = document.createElement("input");
+						img.setAttribute("type","file");
+						img.setAttribute("accept","image/*");
+						img.setAttribute("name","imagenTime");
+						img.classList.add("subir-img");
 						input.setAttribute("type","submit");
 						input.setAttribute("name","btn_time");
-						input.setAttribute("value","time");
+						input.setAttribute("value","subir");
 						input.classList.add('bnt-more');
+						content.appendChild(img);
 						content.appendChild(input);
 						form.appendChild(content);
 						item.appendChild(form);
@@ -117,6 +123,8 @@ function timeLine(){
 
 					}else{
 						timeLine.appendChild(item);
+						imgHeader.setAttribute("style","background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url('"+array[i][3]+"') center center no-repeat;background-size: cover");
+						// imgHeader.setAttribute("style","background-size: cover;");
 						texto.innerHTML=array[i][2];
 						titulo.innerHTML=array[i][1];
 						fecha.innerHTML=array[i][4];

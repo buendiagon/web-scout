@@ -10,6 +10,6 @@
 	$myClass = new baseDeDatos("bd_scout");
 	acceso();
 ?>
-
 </body>
+<script type="text/javascript" src="../../js/contenido/exportTable.js"></script>
 </html>

@@ -73,6 +73,7 @@ function login(){
 		url:   'php/base.php',
 		type:  'post',
 		success:  function (response) {
+			console.log(response);
 			if($.parseJSON(response)==false){
 				alert("el usuario y la contraseña no coinciden");
 			}else if($.parseJSON(response)[0][12]=="administrador"){
@@ -91,7 +92,7 @@ function login(){
 }
 function logout(){
 	var parametros={
-		"userFlag" : 1
+		"userFlag" : 2
 	};
 	$.ajax({
 		data:  parametros,
@@ -123,6 +124,7 @@ function logout(){
 					<span><a href="#">¿Olvido su contrase&ntilde;a?</a></span>
 					</form>`;
 					loginBox.style.display="none";
+					location.reload();
 				}
 				let menu=document.getElementById("config");
 				let config=document.getElementById("bd");
@@ -139,7 +141,7 @@ function logout(){
 }
 function out(){
 	var parametros={
-		"userFlag" : 2
+		"userFlag" : 3
 	};
 	$.ajax({
 		data:  parametros,

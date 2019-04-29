@@ -29,7 +29,7 @@ function acceso() {
                 echo '<h3 style="display: inline-block" id="' . $array3[$z][0] . '">' . $array3[$z][0] . '</h3>';
                 echo '<a style="display: inline-block;margin-left: 10px" href="?tables=editar&nombreBD=' . $myClass->nombreBD . '&tableName=' . $array3[$z][0] . '">Editar</a>';
                 echo '<a style="display: inline-block;margin-left: 10px" href="?tables=eliminar&nombreBD=' . $myClass->nombreBD . '&tableName=' . $array3[$z][0] . '">Eliminar</a>';
-                echo '<table style="width:500px;border-style: none;">
+                echo '<table id="'.$array3[$z][0].'Data" style="width:500px;border-style: none;">
             <thead>
                 <tr>';
                 //se hace un recorrido por array2 que contiene los nombres de las columnas de la tabla y las muestra en una etiqueta th
@@ -39,7 +39,7 @@ function acceso() {
                 echo '</tr>
             </thead>';
                 //este form sirve para enviar los datos que contienen una tupla que se vaya a añadir, y la action permite que el scroll no vuelva a subir despues de enviar el form
-                echo '<form name="form" id="forma" action="#' . $array3[$z][0] . '" method="POST">';
+                echo '<form name="form" id="forma" action="#' . $array3[$z][0] . '" method="POST" enctype="multipart/form-data">';
                 echo '<tbody>';
                 //se hace un recorrido por todos los elementos contenidos en la tabla y se muentran en una etuiqueta td
                 for ($i = 0;$i < count($array);$i++) {
@@ -51,17 +51,22 @@ function acceso() {
                     }
                     //al lado de cada tupla aparecen las acciones para editar y eliminar la tupla
                     //al momento de editar se envian datos al controlador que llena una variable global ($edicion) y vuelve a llamar a la vista
-                    echo '<td style="border-style: none"><a href="?actionTuple=editar&nombreBD=' . $myClass->nombreBD . '&ids=' . urlencode((serialize($array[$i]))) . '&tableName=' . $array3[$z][0] . '#' . $array3[$z][0] . '">Editar</a><br/></td>
-                            <td style="border-style: none"><a href="?actionTuple=eliminar&nombreBD=' . $myClass->nombreBD . '&nombreTable=' . $array3[$z][0] . '&ids=' . urlencode((serialize($array[$i]))) . '#' . $array3[$z][0] . '">eliminar</a><br/></td>
+                    echo '<td style="border-style: none"><a href="?actionTuple=editar&nombreBD=' . $myClass->nombreBD . '&ids=' . urlencode((serialize($array[$i]))) . '&tableName=' . $array3[$z][0] . '#scroll' . $array3[$z][0] . '">Editar</a><br/></td>
+                            <td style="border-style: none"><a href="?actionTuple=eliminar&nombreBD=' . $myClass->nombreBD . '&nombreTable=' . $array3[$z][0] . '&ids=' . urlencode((serialize($array[$i]))) . '#scroll' . $array3[$z][0] . '">eliminar</a><br/></td>
                         </tr>';
                 }
                 //se envian el nombre de la tabla y el nombre de la base de datos para mantener la integridad durante todas las operaciones
-                echo '<tr>
+                echo '<tr id="scroll'.$array3[$z][0].'">
                     <input type="hidden" name="tableName" value="' . $array3[$z][0] . '">
                     <input type="hidden" name="nombreBD" value="' . $myClass->nombreBD . '">';
                 //se genera un nuevo recorrido por las columnas para dar espacio a añadir nuevas tuplas
                 for ($j = 0;$j < (count($array2));$j++) {
-                    echo '<td><input type="text" name="' . $array2[$j][0] . '" value="';
+                    if($array2[$j][0]=="imagen"){
+                        echo '<td><input type="file" name="' . $array2[$j][0] . '" accept=image/* value="';
+                    }else{
+                        echo '<td><input type="text" name="' . $array2[$j][0] . '" value="';
+
+                    }
                     global $edicion, $tableName;
                     //comprueba se la variable global $edicion contiene algo de ser asi llena automaticamente los campos de la tupla para que se puedan editar de forma mas comoda; en caso contrario deja los campos vacios para crear una nueva tupla
                     if (count($edicion) == 0 || $array3[$z][0] != $tableName) {
@@ -73,6 +78,9 @@ function acceso() {
                 }
                 echo '<td style="border-style: none"><input type="submit" id="agregar" name="actionTuple" value="agregar"/><br/></td>';
                 echo '</tr>
+                    <tr>
+                    <td><button id="excel" onclick="fnExcelReport('."'".$array3[$z][0]."Data'".')">Descargar tabla</button></td>
+                    </tr>
                     </tbody>
                     </form>
                 </table>';
