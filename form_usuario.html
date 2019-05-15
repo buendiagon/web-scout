@@ -1,100 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<title>Formulario Usuario</title>
-	<link rel="stylesheet" type="text/css" href="css/formulario_usuario_adm.css">
+	<meta charset="UTF-8">
+	<title>Formulario de usuarios</title>
+	<link rel="stylesheet" href="css/estilos.css"><!-- maneja los estilos del menu -->
+	<link rel="stylesheet" href="css/mainResponsive.css"><!-- maneja los estilos del banner -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css"><!-- Biblioteca Bootstrap -->
+	<link rel="stylesheet" href="css/formulario.css">
+	<!-- hojas de estilo y js del login -->
+	<link rel="stylesheet" type="text/css" href="css/login/style.css">
+	<link rel="stylesheet" type="text/css" href="css/login/swipebox.css">
+	<script type="text/javascript" src="js/login/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/login/login.js"></script>
+	<script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
+	<!-- <link rel="stylesheet" type="text/css" href="css.css"> -->
+	<!-- aqui acaba el login -->
+<link rel="stylesheet" type="text/css" href="css/form_usuario.css">
+<!-- hoja de estilos para el formulario usuario -->
 </head>
-<body id="body_usuario">
+<body>
+	<!-- Banner y menú de la página -->
+	<div id="menu"></div>
 
-	<form id="form_usuario" action="">
-		<h1>Formulario Usuario</h1>
+<br> <br> <br>
+<!-- aqui empieza el contenido del formulario -->
+<div id="contenedor">
+<h2>Formulario para usuarios</h2>
+<form method="post" action="php/datos_usuarios.php">
+<ul>
+<li class="izquierda">
+  <label class="titulo" for="nombre">Paso 1<span class="requerido">*</span></label>
+  <div>
+    <span class="mitad">
+      <input type="text" name="nombres" />
+      <label >Nombres</label>
+    </span>
 
-		<p>Genero</p>
-			<select>
-				<option value="" disabled selected >Elija su opci&oacute;n</option>
-				<option value="3">Hombre</option>
-				<option value="4">Mujer</option>
-			</select>
+    <span class="mitad">
+      <input type="text" name="apellidos" />
+      <label>Apellidos</label>
+    </span>
 
-		<p>Nombres</p>
-		<input type="text" class="field" required id="input_usuario"> <br>
+     <span class="mitad">
+      <!-- validar que no sea mayor que el año actual -->
+      <input  type="date" name="fecha" /> 
+      <label>Fecha de nacimiento</label>
+    </span>
 
-		<p>Apellidos</p>
-		<input type="text" class="field" required> <br>
+    <span class="mitad">
+      <input name="correo" type="email" />
+      <label>Correo Electr&oacute;nico</label>
+    </span>
 
-		<p>Fecha de nacimiento</p>
-		<input type="date" class="field" required> <br>
+  </div>
+</li>
+<li class="izquierda">
+  <label class="titulo" for="nombre">Paso 2 <span class="requerido">*</span></label>
+  <div>
+    <span class="mitad">
+       <select name="tipo_documento" >
+        <option value="" disabled selected>Elejir</option>
+        <option value="ti">Targeta de indentidad</option>
+        <option value="cc">Cedula de ciudadania</option>
+      </select>
+      <label>Tipo de documento</label>
+    </span>
 
-		<p>Correo electr&oacute;nico</p>
-		<input type="email" class="field" required> <br>
+    <span class="mitad">
+      <input name="documento" type="number" />
+      <label>Documento</label>
+    </span>
 
-		<p>Tipo de documento</p>
-			<select>
-				<option value="" disabled selected >Elija su opci&oacute;n</option>
-				<option value="1">C.C</option>
-				<option value="2">T.I</option>
-			</select>
+     <span class="mitad">
+      <!-- validar que no sea mayor que el año actual -->
+      <input id="documento_padre" type="text" /> 
+      <label>Documento del padre</label>
+    </span>
 
-		<p>Documento</p>
-		<input type="number" class="field" required> <br>
+    <span class="mitad">
+      <input name="celular" type="number" />
+      <label>Tel&eacute;fono movil</label>
+    </span>
+    
+  </div>
+</li>
+<li class="izquierda">
+  <label class="titulo" for="nombre">Paso 3 <span class="requerido">*</span></label>
+  <div>
+    <span class="mitad">
+      <input name="direccion" type="text" />
+      <label>Direcci&oacute;n</label>
+    </span>
 
-		<p>Documento del Padre</p>
-		<input type="number" class="field" required> <br>
+    <span class="mitad">
+      <input name="ocupacion" type="text" />
+      <label>Ocupaci&oacute;n</label>
+    </span>
 
-		<p>Celular</p>
-		<input type="number" class="field"> <br>
+     <span class="mitad">
+      <!-- validar que no sea mayor que el año actual -->
+      <input name="eps" type="text" /> 
+      <label>EPS</label>
+    </span>
 
-		<p>Direcci&oacute;n</p>
-		<input type="text" class="field" placeholder="ejemplo: calle xx #XX-XX"> <br>
+    <span class="mitad">
+      <input name="rh" type="text"  />
+      <label>RH</label>
+    </span>
+    
+  </div>
+</li>
+<li class="izquierda">
+  <label class="titulo" for="nombre">Paso 4 <span class="requerido">*</span></label>
+  <div>
+    <span class="mitad">
+      <input name="discapacidad" type="text" />
+        <label style="font-size: 11px">
+          Discapacidad (Si no tiene escriba ninguna)
+        </label>
+    </span>
 
-		<p>Ocupaci&oacute;n</p>
-		<input type="text" class="field" placeholder="ejemplo:estudiante"> <br>
+    <span class="mitad">
+      <input name="estado_civil" type="text" />
+      <label>Estado Civil</label>
+    </span>
 
-		<p>EPS</p>
-		<input type="text" class="field" placeholder="ejemplo:nueva EPS"> <br>
+     <span class="mitad">
+      <!-- validar que no sea mayor que el año actual -->
+      <input name="religion" type="text" /> 
+      <label>Religi&oacute;n</label>
+    </span>
 
-		<p>RH</p>
-		<input type="text" class="field"> <br>
+    <span class="mitad">
+      <input name="poblacion" type="text"  />
+      <label>Poblaci&oacute;n</label>
+    </span>
+     <span class="mitad">
+      <!-- nota: validar que no sea mayor que el año actual -->
+      <input name="estudios" type="text" /> 
+      <label>Estudios</label>
+    </span>
 
-		<p>Discapacidad</p>
-		<input type="text" class="field"> <br>
+    <span class="mitad">
+      <input name="tropa" type="text"  />
+      <label>Tropa</label>
+    </span>
+  </div>
+</li>
 
-		<p>Medicamentos</p>
-		<input type="text" class="field"> <br>
-
-		<p>Dieta</p>
-		<input type="text" class="field"> <br>
-
-		<p>Etapa Progreci&oacute;</p>
-		<input type="text" class="field"> <br>
-
-		<p>Estado Civil</p>
-		<input type="text" class="field" placeholder="ejemplo:solter@"> <br>
-
-		<p>Religi&oacute;n</p>
-		<input type="text" class="field"> <br>
-
-		<p>Poblaci&oacute;n</p>
-		<input type="text" class="field"> <br>
-
-		<p>Estudios</p>
-		<input type="text" class="field" placeholder="ejemplo:Bachillerato"> <br>
-
-			<p>Tropa</p>
-			<select>
-				<option value="" disabled selected >Elija su opci&oacute;n</option>
-				<option value="3">Tropa</option>
-				<option value="4">mas tropas</option>
-			</select>
-
-		<p>Mensaje</p>
-		<textarea class="field"></textarea> <br>
-
-		<p class="center-content">
-			<input type="submit" class="btn btn-green" value="Enviar Datos">
-		</p>
-	</form>
-
+      <li class="botones">
+        <input id="btn_usuario" type="submit" value="Enviar Datos &rarr;" />
+      </li>
+</ul>
+</form>
+</div>
+<!-- Aqui termina el formulario usuario -->
+	<div id="footer"></div><!--script para añadir la cabecera y el footer de todas las páginas-->
+	<script type="text/javascript" src="js/inicio.js"></script>	
 </body>
 </html>
+
