@@ -17,7 +17,8 @@ document.getElementById("menu").innerHTML=`
 			<li><a href="index.html">Inicio</a></li>
 			<li><a href="time_line.html">Linea de Tiempo</a></li>
 			<li><a href="biblioteca.html">Biblioteca</a></li>
-			<li id="config"></li>
+			<li id="perfil"></li>
+			<li id="config"></li>	
 			<li>
 				<a href="#" id="loginButton">
 				<span>Iniciar sesi&oacute;n</span></a>

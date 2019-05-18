@@ -76,15 +76,24 @@ function login(){
 			console.log(response);
 			if($.parseJSON(response)==false){
 				alert("el usuario y la contraseña no coinciden");
-			}else if($.parseJSON(response)[0][12]=="administrador"){
-				let menu=document.getElementById("config");
-				let config=document.createElement("a");
-				config.setAttribute("id","bd");
-				config.setAttribute("href","php/PHPhelp/index.php");
-				config.setAttribute("target","_blank");
-				config.innerHTML="Bases de Datos";
-				menu.appendChild(config);
-			}if(typeof calendar!="undefined"){
+			}else if($.parseJSON(response)[0][12]!=undefined){
+				if($.parseJSON(response)[0][12]=="administrador"){
+					var menu=document.getElementById("config");
+					var config=document.createElement("a");
+					config.setAttribute("id","bd");
+					config.setAttribute("href","php/PHPhelp/index.php");
+					config.setAttribute("target","_blank");
+					config.innerHTML="Bases de Datos";
+					menu.appendChild(config);
+				}
+				var perf=document.getElementById("perfil");
+				var config=document.createElement("a");
+				config.setAttribute("id","changeProfile");
+				config.setAttribute("href","form_usuario.html");
+				config.innerHTML="Perfil";
+				perf.appendChild(config);
+			}
+			if(typeof calendar!="undefined"){
 				calendar.calendarLogin($.parseJSON(response));	
 			}
 		}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-04-2019 a las 21:10:45
+-- Tiempo de generación: 18-05-2019 a las 21:00:55
 -- Versión del servidor: 10.1.36-MariaDB
 -- Versión de PHP: 7.2.11
 
@@ -63,15 +63,9 @@ INSERT INTO `contenido` (`id`, `titulo`, `texto`, `imagen`, `fecha`, `tipo`) VAL
 (4, 'Title1', 'contenido1 asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asd asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asdasd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh d', 'imagenes/1.jpg', '2015-08-13', 'News'),
 (5, 'Title2', 'contenido1 asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asd asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asdasd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh d', 'imagenes/1.jpg', '2015-09-14', 'News'),
 (6, 'Title3', 'contenido3 asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asd asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asdasd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh d', 'imagenes/1.jpg', '2016-04-22', 'News'),
-(7, 'Title4', 'contenido4 asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asd asd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh dgfh df gh df gh  asdasd as d asd  fds fg sdfh gsd fhg sd fhg sdfg hd gfhdfgh  dfg h d hgdgh d gfh df gh df ghdfhgd hfg hdgfhd fghdf gh d', 'imagenes/1.jpg', '2016-06-23', 'News'),
-(8, 'Title1', 'Lorem ipsum dolor sit amet,imagen= consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,fecha= nostrum excepturi amet in dolores. Alias,tipo= ullam.', 'imagenes/1.jpg', '2019-03-15', 'TimeLine'),
-(9, 'Title2', 'Lorem ipsum dolor sit amet,imagen= consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,fecha= nostrum excepturi amet in dolores. Alias,tipo= ullam.', 'imagenes/1.jpg', '2019-03-15', 'TimeLine'),
-(10, 'Title3', 'Lorem ipsum dolor sit amet,imagen= consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,fecha= nostrum excepturi amet in dolores. Alias,tipo= ullam.', 'imagenes/1.jpg', '2019-02-15', 'TimeLine'),
-(11, 'Title4', 'Lorem ipsum dolor sit amet,imagen= consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,fecha= nostrum excepturi amet in dolores. Alias,tipo= ullam.', 'imagenes/1.jpg', '2019-02-15', 'TimeLine'),
-(12, 'Title5', 'Lorem ipsum dolor sit amet,imagen= consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,fecha= nostrum excepturi amet in dolores. Alias,tipo= ullam.', 'imagenes/1.jpg', '2019-02-15', 'TimeLine'),
-(13, 'Title6', 'Lorem ipsum dolor sit amet,imagen= consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,fecha= nostrum excepturi amet in dolores. Alias,tipo= ullam.', 'imagenes/1.jpg', '1998-05-12', 'TimeLine'),
-(14, 'Title7', 'Lorem ipsum dolor sit amet,imagen= consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor,fecha= nostrum excepturi amet in dolores. Alias,tipo= ullam.', 'imagenes/1.jpg', '1999-05-04', 'TimeLine'),
-(16, 'investidura Daniel', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.', '0', '2011-06-02', 'TimeLine');
+(7, 'TimeLine1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.', 'imagenes/contenido/20170305_095157.jpg', '2019-02-15', 'TimeLine'),
+(48, 'investidura Daniel', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ipsa ratione omnis alias cupiditate saepe atque totam aperiam sed nulla voluptatem recusandae dolor, nostrum excepturi amet in dolores. Alias, ullam.', 'imagenes/contenido/20170305_102220.jpg', '2019-02-15', 'TimeLine'),
+(49, 'dasd', 'asdasd', 'imagenes/contenido/20170305_094518.jpg', '2019-02-15', 'TimeLine');
 
 -- --------------------------------------------------------
 
@@ -92,7 +86,6 @@ CREATE TABLE `eventos` (
 
 INSERT INTO `eventos` (`id`, `fecha`, `evento`, `rama`) VALUES
 (28, '2019-02-08', 'juego', 'manada'),
-(29, '2019-02-07', 'aniversario comunidad', 'comunidad'),
 (30, '2019-02-22', 'actividad de servicio', 'grupo'),
 (33, '2019-03-22', 'sda', 'grupo'),
 (34, '2019-02-14', 'actividad de servicio', 'tropa');
@@ -137,7 +130,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`documento`, `tipo_documento`, `nombres`, `apellidos`, `celular`, `direccion`, `email`, `ocupacion`, `EPS`, `fecha_nacimiento`, `usuario`, `password`, `nivel`, `genero`, `estado_civil`, `religion`, `poblacion`, `estudios`, `estrato`, `discapacidad`, `RH`, `medicamentos`, `dieta`, `etapa_progresion`, `documento_padre`) VALUES
 ('1120582189', 'C.C', 'Daniel Adrian', 'Gonzalez Buendia', '3182053244', 'primero de mayo cll 19 #19-24', 'danieladriangonzalez@hotmail.com', 'estudiante', 'nueva EPS', '1998-04-22', 'buendiagon', '146015abb8c00070efc50503fcfdf568', 'administrador', 0, 'soltero', 'ninguna', 'ninguna', 'bachiller tÃ©cnico', 2, 'ninguna', 'A+', 'ninguno', 'ninguna', 'ninguna', '41655039'),
-('123', 'C.C', 'prueba', 'prueba', '0000000000', 'calle 00', 'prueba@prueba.com', 'prueba', 'nueva EPS', '2000-04-15', 'prueba', 'c893bad68927b457dbed39460e6afd62', 'scout', 1, 'soltero', 'ninguna', 'ninguna', 'tÃ©cnico', 3, 'ninguna', 'AB+', 'ninguno', 'ninguna', 'ninguna', ''),
+('123', 'C.C', 'prueba', 'prueba', '0000000000', 'calle 00', 'prueba@prueba.com', 'prueba', 'nueva EPS', '2000-04-15', 'prueba', 'c893bad68927b457dbed39460e6afd62', 'tropa', 1, 'soltero', 'ninguna', 'ninguna', 'tÃ©cnico', 3, 'ninguna', 'AB+', 'ninguno', 'ninguna', 'ninguna', ''),
 ('41655039', 'C.C', 'Maria Eugenia', 'Buendia PeÃ±a', '3115408887', 'primero de mayo cll 19 #19-24', 'buendiadellano@gmail.com', 'pensionada', 'nueva EPS', '1964-09-25', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
@@ -183,7 +176,7 @@ ALTER TABLE `biblioteca`
 -- AUTO_INCREMENT de la tabla `contenido`
 --
 ALTER TABLE `contenido`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT de la tabla `eventos`
