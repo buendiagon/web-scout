@@ -183,4 +183,14 @@ if(isset($_POST['btn_time'])){
 		header('Location: '.$return);	   
     }
 }
+if(isset($_POST['rama'])){
+	$sql="";
+	if($_POST['rama']==""){
+		$sql="SELECT * FROM `biblioteca`";
+	}else{
+		$sql="SELECT * FROM `biblioteca` WHERE rama='".$_POST['rama']."'";
+	}
+	$myClass->sentence($sql,$array);
+	echo json_encode($array);
+}
 ?>

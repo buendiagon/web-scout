@@ -162,41 +162,56 @@ function out(){
 		}
 	});
 }
-function biblioteca(){
-	var texto=document.getElementById("text"+where+"1");
-	let noticias=document.getElementById("noticias");
-	if(texto!==null || noticias!==null){
+function biblioteca(rama){
+	var main=document.getElementById("bibliotecaMain");
+	if(main!=null){
+		main.innerHTML="";
 		var parametros={
-			"id" : where
+			"rama" : rama
 		};
 		$.ajax({
 			data:  parametros,
 			url:   'php/base.php',
 			type:  'post',
 			success:  function (response) {
-				var tex=$.parseJSON(response);
-				for (var i = 0; i < tex.length+1; i++) {
-					if(i!==tex.length){
-						if(where=="News"){
-							news(i+1,tex[i][1],tex[i][2],tex[i][3]);
-						}else if(where=="Home"){
-							let titulo=document.getElementById("title"+where+(i+1));
-							let texto=document.getElementById("text"+where+(i+1));
-							let img=document.getElementById("image"+where+(i+1));
-							titulo.innerHTML=tex[i][1];
-							texto.innerHTML=tex[i][2];
-							img.src=tex[i][3];
-						}
-					}if(i==tex.length){
-						if(where=="News"){
-							$('.noticias').slick({
-								slidesToShow: 1,
-								slidesToScroll: 1,
-								autoplay: true,
-								autoplaySpeed: 3000,
-							});
-						}
+				var bibliotecaResponse=$.parseJSON(response);
+				for (var i = 0; i < bibliotecaResponse.length+1; i++) {
+					let article=document.createElement("article");
+					let hiperVinculo=document.createElement("a");
+					let img=document.createElement("img");
+					let barra=document.createElement("div");
+					let letra=document.createElement("div");
+
+					article.classList.add('item');
+					hiperVinculo.setAttribute("target","_blank");
+					hiperVinculo.href=bibliotecaResponse[i][5];
+					var imgUrl;
+					if(bibliotecaResponse[i][4]=="lobato"){
+						imgUrl="imagenes/biblioteca_img/lobatos/lobatos.png";
+					}else if(bibliotecaResponse[i][4]=="scout"){
+						imgUrl="imagenes/biblioteca_img/scout/scout.png";
+					}else if(bibliotecaResponse[i][4]=="caminante"){
+						imgUrl="imagenes/biblioteca_img/caminantes/caminantes.png";
+					}else if(bibliotecaResponse[i][4]=="rover"){
+						imgUrl="imagenes/biblioteca_img/rovers/rovers.png";
+					}else{
+						imgUrl="imagenes/pdf.png";
 					}
+					img.src=imgUrl;
+					img.setAttribute("width","100%");
+					img.setAttribute("height","100%");
+
+
+					barra.setAttribute("id","barra");
+					letra.setAttribute("id","letra");
+					letra.innerHTML=bibliotecaResponse[i][1];
+					letra.setAttribute("style","font-size:90%");
+
+					barra.appendChild(letra);
+					hiperVinculo.appendChild(img);
+					hiperVinculo.appendChild(barra);
+					article.appendChild(hiperVinculo);
+					main.appendChild(article);
 				}
 			}
 		});
@@ -205,5 +220,6 @@ function biblioteca(){
 
 contenido("News");
 contenido("Home");
+biblioteca("");
 login();
 logout();
