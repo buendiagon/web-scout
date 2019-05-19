@@ -162,6 +162,46 @@ function out(){
 		}
 	});
 }
+function biblioteca(){
+	var texto=document.getElementById("text"+where+"1");
+	let noticias=document.getElementById("noticias");
+	if(texto!==null || noticias!==null){
+		var parametros={
+			"id" : where
+		};
+		$.ajax({
+			data:  parametros,
+			url:   'php/base.php',
+			type:  'post',
+			success:  function (response) {
+				var tex=$.parseJSON(response);
+				for (var i = 0; i < tex.length+1; i++) {
+					if(i!==tex.length){
+						if(where=="News"){
+							news(i+1,tex[i][1],tex[i][2],tex[i][3]);
+						}else if(where=="Home"){
+							let titulo=document.getElementById("title"+where+(i+1));
+							let texto=document.getElementById("text"+where+(i+1));
+							let img=document.getElementById("image"+where+(i+1));
+							titulo.innerHTML=tex[i][1];
+							texto.innerHTML=tex[i][2];
+							img.src=tex[i][3];
+						}
+					}if(i==tex.length){
+						if(where=="News"){
+							$('.noticias').slick({
+								slidesToShow: 1,
+								slidesToScroll: 1,
+								autoplay: true,
+								autoplaySpeed: 3000,
+							});
+						}
+					}
+				}
+			}
+		});
+	}
+}
 
 contenido("News");
 contenido("Home");
