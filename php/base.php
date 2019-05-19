@@ -33,7 +33,6 @@ if(isset($_POST['deleteEvent'])){
 
 
 // PHP para controlar las bases de datos de los usuarios de la página 
-$myClass=new baseDeDatos('bd_scout');
 $array=0;
 session_start();
 if(isset($_REQUEST['user'])){
@@ -69,7 +68,6 @@ if(isset($_POST['userFlag'])){
 
 
 // PHP para controlar el contenido dinámico de la página
-$myClass=new baseDeDatos('bd_scout');
 $array=0;
 if(isset($_POST['id'])){
 	$sql="SELECT * FROM `contenido` WHERE tipo='".$_POST['id']."' ORDER by fecha DESC LIMIT 3";
@@ -192,5 +190,8 @@ if(isset($_POST['rama'])){
 	}
 	$myClass->sentence($sql,$array);
 	echo json_encode($array);
+}
+if(isset($_GET['prueba'])){
+	echo json_decode($_SESSION['nombre'])[0][2];
 }
 ?>
