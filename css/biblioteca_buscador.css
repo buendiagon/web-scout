@@ -341,7 +341,7 @@ ul li div {
 }
  
 
- /*desplegable submenu biblioteca*/
+ /*desplegable submenu filtro para la biblioteca*/
 .navegacion{
   position: relative;
   right:10%;
@@ -384,8 +384,21 @@ ul li div {
 visibility: visible;
 opacity: 1;
 }
-/*termina desplegable*/
+
 #bibliotecaMain{
   position: relative;
  left:2%;
 }
+
+ button{
+  border-style: none;
+  background-color:#7C7EFF;
+  font-family: verdana;
+  width:100%;
+  border-radius:15px 12px;
+  cursor: pointer;
+}
+button:hover{
+   background-color:#84BEE1; 
+}
+/*termina desplegable*/
