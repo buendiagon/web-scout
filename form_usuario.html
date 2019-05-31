@@ -32,23 +32,23 @@
   <label class="titulo" for="nombre"><span class="requerido">*</span></label>
   <div>
     <span class="mitad">
-      <input type="text" name="nombres" />
+      <input type="text" name="nombres" required />
       <label >Nombres</label>
     </span>
 
     <span class="mitad">
-      <input type="text" name="apellidos" />
+      <input type="text" name="apellidos" required />
       <label>Apellidos</label>
     </span>
 
      <span class="mitad">
       <!-- validar que no sea mayor que el año actual -->
-      <input  type="date" name="fecha" /> 
+      <input  type="date" name="fecha" required/> 
       <label>Fecha de nacimiento</label>
     </span>
 
     <span class="mitad">
-      <input name="correo" type="email" />
+      <input name="correo" type="email" required/>
       <label>Correo Electr&oacute;nico</label>
     </span>
 
@@ -67,18 +67,18 @@
     </span>
 
     <span class="mitad">
-      <input name="documento" type="number" />
+      <input name="documento" type="number" required />
       <label>Documento</label>
     </span>
 
      <span class="mitad">
       <!-- validar que no sea mayor que el año actual -->
-      <input id="documento_padre" type="text" /> 
+      <input id="documento_padre" type="text" required/> 
       <label>Documento del padre</label>
     </span>
 
     <span class="mitad">
-      <input name="celular" type="number" />
+      <input name="celular" type="number" required/>
       <label>Tel&eacute;fono movil</label>
     </span>
     
@@ -88,23 +88,23 @@
   <label class="titulo" for="nombre"><span class="requerido">*</span></label>
   <div>
     <span class="mitad">
-      <input name="direccion" type="text" />
+      <input name="direccion" type="text" required/>
       <label>Direcci&oacute;n</label>
     </span>
 
     <span class="mitad">
-      <input name="ocupacion" type="text" />
+      <input name="ocupacion" type="text" required/>
       <label>Ocupaci&oacute;n</label>
     </span>
 
      <span class="mitad">
       <!-- validar que no sea mayor que el año actual -->
-      <input name="eps" type="text" /> 
+      <input name="eps" type="text" required/> 
       <label>EPS</label>
     </span>
 
     <span class="mitad">
-      <input name="rh" type="text"  />
+      <input name="rh" type="text" required />
       <label>RH</label>
     </span>
     
@@ -114,35 +114,35 @@
   <label class="titulo" for="nombre"> <span class="requerido">*</span></label>
   <div>
     <span class="mitad">
-      <input name="discapacidad" type="text" />
+      <input name="discapacidad" type="text" required/>
         <label style="font-size: 11px">
           Discapacidad (Si no tiene escriba ninguna)
         </label>
     </span>
 
     <span class="mitad">
-      <input name="estado_civil" type="text" />
+      <input name="estado_civil" type="text" required/>
       <label>Estado Civil</label>
     </span>
 
      <span class="mitad">
       <!-- validar que no sea mayor que el año actual -->
-      <input name="religion" type="text" /> 
+      <input name="religion" type="text" required /> 
       <label>Religi&oacute;n</label>
     </span>
 
     <span class="mitad">
-      <input name="poblacion" type="text"  />
+      <input name="poblacion" type="text" required />
       <label>Poblaci&oacute;n</label>
     </span>
      <span class="mitad">
       <!-- nota: validar que no sea mayor que el año actual -->
-      <input name="estudios" type="text" /> 
+      <input name="estudios" type="text" required/> 
       <label>Estudios</label>
     </span>
 
     <span class="mitad">
-      <input name="tropa" type="text"  />
+      <input name="tropa" type="text" required />
       <label>Tropa</label>
     </span>
   </div>

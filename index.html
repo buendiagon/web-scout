@@ -36,7 +36,7 @@
 			</div>	
 		</div>
 		<div class="banner-1">
-			<h3>Ver más<a href="#" target="_blanck">Ver más</a></h3>
+			<h3>Visitanos en facebook<a href="https://www.facebook.com/Grupo-Scout-2-Nukak-Maku-Del-Guaviare-1713784762236698/" target="_blanck">Fb scout</a></h3>
 		</div>
 		<div id="titulo"> 
 			<h2>¿Qu&eacute; hacemos?</h2>
@@ -67,16 +67,16 @@
 		<!-- parte del iframe (mapa de San Jose del Guavire) -->
 		<!-- <div id="maps"></div> -->
 		<span class="clearfix"></span>
-		<div class="row-fluid" style="margin-top: 5%;">
+		<div class="row-fluid" style="margin-top:4%;">
 			<div class="col-sm-6">
 				<div class="formulario">
 					<h4 class="formu-ti">Formulario de Contacto</h4>
-					<form action="index.php" method="post">
-						<input type="text" name="nombre" placeholder="Nombre" class="caja-1">
+					<form action="php/envia.php" method="post">
+						<input type="text" name="nombre" placeholder="Nombre" class="caja-1" required>
 						<input type="email" name="email" placeholder="E-mail" class="caja-1" required>
-						<input type="tel" name="telefono" placeholder="Teléfono" class="caja-1" required>
+						<input type="tel" name="telefono" placeholder="Tel&eacute;fono" class="caja-1" required>
 						<input type="text" name="asunto" placeholder="Asunto" class="caja-1">
-						<textarea name="mensaje" id="" cols="30" rows="10" placeholder="Comentarios" class="caja-2"></textarea>
+						<textarea name="mensaje" id="" cols="25" rows="10" placeholder="Comentarios" class="caja-2"></textarea>
 						<button type="submit" class="contratar-a correr">Enviar</button>
 					</form>
 				</div>
@@ -118,10 +118,8 @@ function initMap() {
 <script async defer
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBfsbVxz5bsAsLJDmr2bReNv210163nz2I&callback=initMap">
 </script> -->
-
 <!-- Scripts para las particulas y su ubicacion -->
 <script type="text/javascript" src="js/particles/particles.js"></script>
 <script type="text/javascript" src="js/particles/app.js"></script>
 </body>
 </html>
-

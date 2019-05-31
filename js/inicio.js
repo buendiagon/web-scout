@@ -1,3 +1,4 @@
+
 document.getElementById("menu").innerHTML=`
 <section id="banner" data-img="images/banner">
 	<div class="inner">
@@ -22,7 +23,10 @@ document.getElementById("menu").innerHTML=`
 			<li>
 				<a href="#" id="loginButton">
 				<span>Iniciar sesi&oacute;n</span></a>
-				<div id="loginBox">                
+
+		
+
+				<div id="loginBox">               
 					<form action="php/base.php" id="loginForm">
 						<fieldset id="body">
 							<fieldset>
@@ -38,27 +42,21 @@ document.getElementById("menu").innerHTML=`
 						</fieldset>
 						<span><a href="#">¿Olvido su contrase&ntilde;a?</a></span>
 					</form>
-				</div>
-				<div class="clearfix"></div>
+				</div>				
+				<div class="clearfix"></div>				
 			</li>
+
 		</ul>
 	</nav>
 </div>`;
-
 document.getElementById("footer").innerHTML=`
 <!-- aqui empieza el footer -->
 <footer id="footer">
 	<div class="inner">
-		<h2>Perfil Lideres</h2>
-		<img align="center" src="imagenes/autor.png"> <!--mi perfil-->
-		<p>Diseñador Grafico & Programador</p>
-			<!-- Poner luego los botones de facebook y email
-			<ul class="icons">
-				<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-				<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-			</ul> -->
-		<p class="copyright">Scout de San Jose del Guaviare </p>
+		<h2>Somos Scout Guaviare</h2>
+		<a href="#">Ub&iacute;canos</a> 
+		<p class="copyright">© 2019 Scout de San Jose del Guaviare. Todos los derechos reservados</p>
+		<p class="copyright">Unete y explora, estamos todos unidos.</p>
 	</div>
 </footer>
-				<!-- Aqui termina el footer	 -->
-<!--ponerlo en una clase aparte para modificarlo ..TO BE CONTINUE..>-->`;
+<!-- Aqui termina el footer	 -->`;
