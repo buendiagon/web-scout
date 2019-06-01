@@ -16,14 +16,14 @@
 	<script type="text/javascript" src="js/jQuery/jquery.min.js"></script>
 	<!-- aqui acaba el login -->
 	<link rel="stylesheet" type="text/css" href="css/biblioteca_buscador.css"> <!-- estilo css del buscador -->
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 
 </head>
 <body>
 	<div id="menu"></div>  <!-- div contenedor de lo que es el menu -->
 	<div id="title_search"><LABEL>Biblioteca Internacional del guaviare</LABEL></div>
-    <!-- Aqui  inicia el menu de filtros para la biblioteca-->
-    <nav class="navegacion">
+	<!-- Aqui  inicia el menu de filtros para la biblioteca-->
+    <!-- <nav class="navegacion">
     	  <label style="font-size:20px">Filtros por ramas</label>
     	<ul class="menu_nav">
     	 <li><button onclick="biblioteca('')">Cargar Todos</button>
@@ -36,19 +36,32 @@
     	  </ul>
     	 </li>  	 
     	</ul>
-    </nav>
- 	<!-- Aqui termina el menu del filtro para la biblioteca-->
+    </nav> -->
+    <select name="transporte" onchange="biblioteca(this.value)">
+    	<option value="">Cargar Todos</option>
+
+    	<option value="lobato">Lobatos</option>
+
+    	<option value="caminante">Scout</option>
+
+    	<option value="scout">Caminantes</option>
+
+    	<option value="rover">Rovers</option>
+
+    	<option value="pdf">Archivos varios</option>
+    </select>
+    <!-- Aqui termina el menu del filtro para la biblioteca-->
     <main id="bibliotecaMain" class="content">
     </main>
-		<div id="footer"></div> <!-- div contenedor de lo que es el footer -->
-		<script type="text/javascript" src="js/inicio.js"></script>
-		<!-- generador del efecto del boton que desciende -->
-		<script src="js/scrolly/jquery.scrolly.min.js"></script>
-		<script src="js/scrolly/jquery.poptrox.min.js"></script>
-		<script src="js/scrolly/skel.min.js"></script>
-		<script src="js/scrolly/util.js"></script>
-		<script src="js/scrolly/main.js"></script>
-		<!-- controlador del contenido dinámico -->
-		<script src="js/contenido/contenido.js"></script>
-	</body>
-	</html>
+    <div id="footer"></div> <!-- div contenedor de lo que es el footer -->
+    <script type="text/javascript" src="js/inicio.js"></script>
+    <!-- generador del efecto del boton que desciende -->
+    <script src="js/scrolly/jquery.scrolly.min.js"></script>
+    <script src="js/scrolly/jquery.poptrox.min.js"></script>
+    <script src="js/scrolly/skel.min.js"></script>
+    <script src="js/scrolly/util.js"></script>
+    <script src="js/scrolly/main.js"></script>
+    <!-- controlador del contenido dinámico -->
+    <script src="js/contenido/contenido.js"></script>
+</body>
+</html>

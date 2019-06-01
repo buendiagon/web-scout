@@ -344,7 +344,7 @@ ul li div {
  /*desplegable submenu filtro para la biblioteca*/
 .navegacion{
   position: relative;
-  right:10%;
+  /*right:10%;*/
   top:-15px;
   width:300px;
 }
@@ -387,7 +387,7 @@ opacity: 1;
 
 #bibliotecaMain{
   position: relative;
- left:2%;
+ /*left:2%;*/
 }
 
  button{
