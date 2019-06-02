@@ -265,7 +265,6 @@ function perfil(){
 				poblacion.value=userResponse[0][16];
 				estudios.value=userResponse[0][17];
 				rama.value=userResponse[0][23];
-
 			}
 		});
 	}
@@ -276,6 +275,6 @@ function perfil(){
 contenido("News");
 contenido("Home");
 biblioteca("");
-perfil();
 login();
 logout();
+perfil();

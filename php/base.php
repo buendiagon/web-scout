@@ -191,7 +191,16 @@ if(isset($_POST['rama'])){
 	$myClass->sentence($sql,$array);
 	echo json_encode($array);
 }
-if(isset($_GET['prueba'])){
-	echo json_decode($_SESSION['nombre'])[0][2];
+function updateSession($documentoUser){
+	require_once('PHPhelp/php/modelo.php');
+	$myClass=new baseDeDatos('bd_scout');
+	$array=0;
+	$sql="SELECT * FROM usuarios where documento='".$_POST['documento']."')";
+	$myClass->sentence($sql,$array);
+	if(count($array)==1){
+		$_SESSION['nombre']=json_encode($array);
+	}else{
+		$_SESSION['nombre']=json_encode(false);
+	}
 }
 ?>
