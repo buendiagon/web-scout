@@ -51,10 +51,11 @@ document.getElementById("menu").innerHTML=`
 </div>`;
 document.getElementById("footer").innerHTML=`
 <!-- aqui empieza el footer -->
-<footer id="footer">
+<footer class="footer_idColor" id="footer">
 	<div class="inner">
 		<h2>Somos Scout Guaviare</h2>
-		<a href="#">Ub&iacute;canos</a> 
+		<a href="https://satellites.pro/mapa_de_San_Jose_del_Guaviare#2.568024,-72.639499,19" target="_blanck">Ub&iacute;canos</a> 
+		<a href="https://www.facebook.com/Grupo-Scout-2-Nukak-Maku-Del-Guaviare-1713784762236698/" target="_blanck">Facebook</a> 
 		<p class="copyright">© 2019 Scout de San Jose del Guaviare. Todos los derechos reservados</p>
 		<p class="copyright">Unete y explora, estamos todos unidos.</p>
 	</div>

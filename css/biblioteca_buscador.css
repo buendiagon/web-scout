@@ -1,108 +1,56 @@
 /***********************
  * Buscador scout  *
  ***********************/
-
+ /*estilo del select biblioteca*/
+.select-css {
+ display: block;
+ font-size: 16px;
+ font-family: 'Arial', sans-serif;
+ font-weight: 400;
+ color: #444;
+ line-height: 1.3;
+ padding: .4em 1.4em .3em .8em;
+ width:150px;
+ max-width: 100%; 
+ box-sizing: border-box;
+ margin: 0;
+ border: 1px solid #aaa;
+ box-shadow: 0 1px 0 1px rgba(0,0,0,.03);
+ border-radius: .3em;
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ appearance: none;
+ background-color: #fff;
+ background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
+   linear-gradient(to bottom, #ffffff 0%,#f7f7f7 100%);
+ background-repeat: no-repeat, repeat;
+ background-position: right .7em top 50%, 0 0;
+ background-size: .65em auto, 100%;
+}
+.select-css::-ms-expand {
+ display: none;
+}
+.select-css:hover {
+ border-color: #888;
+}
+.select-css:focus {
+ border-color: #aaa;
+ box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
+ box-shadow: 0 0 0 3px -moz-mac-focusring;
+ color: #222; 
+ outline: none;
+}
+.select-css option {
+ font-weight:normal;
+}
 #title_search{
 	text-align: center;
 	font-size: 25px;
 }
-
-
-.flexsearch--wrapper {
-	height: auto;
-	width: auto;
-	max-width: 100%;
-	overflow: hidden;
-	background: transparent;
-	margin: 0;
-	position: static;
-}
-	
-.flexsearch--form {
-	overflow: hidden;
-	position: relative;
-}
-	
-.flexsearch--input-wrapper {
-	padding: 0 66px 0 0; /* Right padding for submit button width */
-	overflow: hidden;
-}
-
-.flexsearch--input {
-	position: relative;
-	top:0px;
-    width:75%;
-}
-
-/***********************
- * configuracion de styles *
- ***********************/
-.flexsearch {
-  padding: 0 25px 0 200px; /* Padding for other horizontal elements */
-}
-
-.flexsearch--input {
-  	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
- 	height: 60px;
-  	padding: 0 46px 0 10px;
-	border-color: #888;
-  	border-radius: 35px; /* (height/2) + border-width */
-	border-style: solid;
-	border-width: 5px;
-  	margin-top: 15px;
-  	color: #333;
-  	font-family: 'Helvetica', sans-serif;
-	font-size: 26px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-}
-	
-.flexsearch--submit {
-  	position: absolute;
-	right: 0;
-	top: -10%;
-	left: 70%;
-	display: block;
-	width: 60px;
-	height: 60px;
-  	padding: 0;
-  	border: none;
-	margin-top: 20px; /* margin-top + border-width */
-  	margin-right: 5px; /* border-width */
-	background: transparent;
-  	color: #888;
-  	font-family: 'Helvetica', sans-serif;
-  	font-size: 40px;
-  	line-height: 60px;
-}
-
-.flexsearch--input:focus {
-  outline: none;
-  border-color: #333;
-}
-
-.flexsearch--input:focus.flexsearch--submit {
- 	color: #333; 
-}
-
-.flexsearch--submit:hover {
-  color: #333;
-  cursor: pointer;
-}
-
-::-webkit-input-placeholder {
-	color: #888;  
-}
-
-input:-moz-placeholder {
-  color: #888
-}
-
+/*aqui termina el estilo select*/
 
 /****************
- * Pretify demo *
+ * demo *
  ****************/
 .h1 {
   float: left;
@@ -341,64 +289,3 @@ ul li div {
 }
  
 
- /*desplegable submenu filtro para la biblioteca*/
-.navegacion{
-  position: relative;
-  /*right:10%;*/
-  top:-15px;
-  width:300px;
-}
-
-.navegacion ul{
-  list-style: none;
-}
-.menu_nav > li{
-  position: relative;
-  display: inline-block;
-}
-
-.menu_nav > li > button{
-  display: block;
-  color:black;
-  text-decoration: none;
-}
-
-.menu_nav li button:hover{
-  color:black;
-  transition:all .3s;
-}
-.submenu{
-  position:relative;
-  background:#FFF6F4;
-  width: 100%;
-  visibility: hidden;
-  font-size:98%;
-}
-.submenu li button{
-  display: block;
-  padding:14px;
-  color:black;
-  text-decoration:none;
-}
-.menu_nav li:hover .submenu{
-visibility: visible;
-opacity: 1;
-}
-
-#bibliotecaMain{
-  position: relative;
- /*left:2%;*/
-}
-
- button{
-  border-style: none;
-  background-color:#7C7EFF;
-  font-family: verdana;
-  width:100%;
-  border-radius:15px 12px;
-  cursor: pointer;
-}
-button:hover{
-   background-color:#84BEE1; 
-}
-/*termina desplegable*/

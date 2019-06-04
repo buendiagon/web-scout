@@ -1,6 +1,14 @@
 *{
 	font-family: rale;
 }
+/*color de los hipervin del footer*/
+.footer_idColor a{
+ color:#917A9B;
+}
+/*termina aqui*/
+
+
+
 /*modo oscuro*//*
 #check-box{
 	margin: 0;
