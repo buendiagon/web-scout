@@ -73,7 +73,6 @@ function login(){
 		url:   'php/base.php',
 		type:  'post',
 		success:  function (response) {
-			console.log(response);
 			if($.parseJSON(response)==false){
 				alert("el usuario y la contraseña no coinciden");
 			}else if($.parseJSON(response)[0][12]!=undefined){
