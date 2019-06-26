@@ -1,7 +1,7 @@
 <?php
 // PHP para controlar las bases de datos del calendario de la página 
 require_once('PHPhelp/php/modelo.php');
-$myClass=new baseDeDatos('bd_scout');
+$myClass=new baseDeDatos();
 $array=0;
 // consulta para obtener los eventos que haya en un mes determinado
 if(isset($_POST['mes'])){
@@ -193,7 +193,7 @@ if(isset($_POST['rama'])){
 }
 function updateSession($documentoUser){
 	require_once('PHPhelp/php/modelo.php');
-	$myClass=new baseDeDatos('bd_scout');
+	$myClass=new baseDeDatos();
 	$array=array();
 	$sql="SELECT * FROM usuarios where documento='".$_POST['documento']."'";
 	$myClass->sentence($sql,$array);

@@ -7,7 +7,7 @@
 <?php 
 	// require_once('php/DataBase.php');
 	require_once('php/controlador.php');
-	$myClass = new baseDeDatos("bd_scout");
+	$myClass = new baseDeDatos();
 	acceso();
 ?>
 </body>

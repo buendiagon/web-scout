@@ -16,6 +16,10 @@ document.getElementById("menu").innerHTML=`
 	<nav id="lista">
 		<ul>
 			<li><a href="index.html">Inicio</a></li>
+			<li><a href="index.html">Manada</a></li>
+			<li><a href="index.html">Tropa</a></li>
+			<li><a href="index.html">Comunidad</a></li>
+			<li><a href="index.html">Clan</a></li>
 			<li><a href="time_line.html">Linea de Tiempo</a></li>
 			<li><a href="biblioteca.html">Biblioteca</a></li>
 			<li id="perfil"></li>

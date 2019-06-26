@@ -2,7 +2,7 @@
 class baseDeDatos {
     //constructor de la baseDeDatos que ya contienen unos valores por default que se pueden modificar
     public $nombreBD, $user, $password, $host;
-    public function __construct($nombreBD = "bd_prueba", $user = "root", $password = "", $host = "localhost") {
+    public function __construct($nombreBD = "bd_scout", $user = "root", $password = "", $host = "localhost") {
         $this->host = $host;
         $this->nombreBD = $nombreBD;
         $this->user = $user;
