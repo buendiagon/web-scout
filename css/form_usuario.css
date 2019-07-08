@@ -151,11 +151,6 @@ ul li.botones input {
   font-size: 1.3em;
 }
 
-ul li {
-  margin: 0.5em 0;
-  padding: 0.5em;
-  width: 46%;
-}
 
 ul li label.titulo {
   font-weight: bold;
@@ -210,10 +205,6 @@ ul li input:focus {
 ul li.izquierda, ul li.derecha {
   float: none;
   width: auto;
-}
-
-ul li {
-  overflow: hidden;
 }
 
 ul li label.titulo {

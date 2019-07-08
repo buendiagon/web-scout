@@ -62,6 +62,46 @@ function news(id,titulo,texto,imagen){
 	}
 }
 
+function ramas(){
+	let rama=document.getElementById("ramaContainer");
+	if(rama!==null){
+
+		var sPath = window.location.pathname;
+		var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+
+		let ramaPage="manada";
+		if(sPage=="_manada.html"){
+			ramaPage="manada";
+		}else if(sPage=="_tropa.html"){
+			ramaPage="tropa";
+		}else if(sPage=="_comunidad.html"){
+			ramaPage="comunidad";
+		}else if(sPage=="_clan.html"){
+			ramaPage="clan";
+		}
+		var parametros={
+			"ramaPage" : ramaPage
+		};
+		$.ajax({
+			data:  parametros,
+			url:   'php/base.php',
+			type:  'post',
+			success:  function (response) {
+				var array = $.parseJSON(response);
+				let title=document.getElementById("titulo_pag");
+				let text=document.getElementById("parrafo1_pag");
+				let img=document.getElementById("img1_pag");
+				title.innerHTML=array[0][1];
+				text.innerHTML=array[0][2];
+				img.src=array[0][3];
+			}
+		});
+
+
+
+	}
+}
+
 
 
 function login(){
@@ -274,6 +314,7 @@ function perfil(){
 contenido("News");
 contenido("Home");
 biblioteca("");
+ramas();
 login();
 logout();
 perfil();

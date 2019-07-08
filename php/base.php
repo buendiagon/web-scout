@@ -191,6 +191,13 @@ if(isset($_POST['rama'])){
 	$myClass->sentence($sql,$array);
 	echo json_encode($array);
 }
+if(isset($_POST['ramaPage'])){
+	$rama=$_POST['ramaPage'];
+	$sql="SELECT * FROM contenido WHERE tipo='$rama'";
+	$myClass->sentence($sql,$array);
+	// str_replace($array," ","");	
+	echo json_encode($array);
+}
 function updateSession($documentoUser){
 	require_once('PHPhelp/php/modelo.php');
 	$myClass=new baseDeDatos();

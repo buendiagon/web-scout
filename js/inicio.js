@@ -14,9 +14,15 @@ document.getElementById("menu").innerHTML=`
 		<p>Scout Guaviare</p>
 	</div>
 	<nav id="lista">
-		<ul>
+		<ul class="nav2">
 			<li><a href="index.html">Inicio</a></li>
-			<li><a href="_manada.html">Manada</a></li>
+			<li><a href="_manada.html">Manada</a>
+				<ul class="expand_ramas">
+					<li><a href="_tropa.html">Tropa</a></li>
+					<li><a href="_comunidad.html">Comunidad</a></li>
+					<li><a href="_clan.html">Clan</a></li>
+				</ul>
+			</li>
 			<li><a href="time_line.html">Linea de Tiempo</a></li>
 			<li><a href="biblioteca.html">Biblioteca</a></li>
 			<li id="perfil"></li>
